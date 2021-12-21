@@ -4,20 +4,27 @@
       <div class="title">用户登录</div>
       <el-form class="login-form">
         <el-form-item>
-          <el-icon class="svg-container"><avatar /></el-icon>
+          <!-- <el-icon class="svg-container"><avatar /></el-icon> -->
+          <el-icon class="svg-container">
+            <SvgIcon icon="user"></SvgIcon>
+          </el-icon>
           <el-input placeholder="请输入用户名" />
         </el-form-item>
 
         <el-form-item>
           <el-icon class="svg-container">
+            <!-- TODO 处理外部图标 -->
             <span class="svg-container">
-              <SvgIcon icon="https://res.lgdsunday.club/user.svg"></SvgIcon>
+              <!-- <SvgIcon icon="https://res.lgdsunday.club/user.svg"></SvgIcon> -->
+              <SvgIcon icon="password"></SvgIcon>
             </span>
           </el-icon>
-          <el-input placeholder="请输入密码" /><el-icon
-            class="svg-container show-password"
-            ><avatar
-          /></el-icon>
+          <el-input placeholder="请输入密码" />
+          <span class="svg-container show-password">
+            <el-icon class="svg-container">
+              <SvgIcon icon="eye"></SvgIcon>
+            </el-icon>
+          </span>
         </el-form-item>
       </el-form>
 
@@ -31,8 +38,9 @@ import { onMounted } from 'vue'
 // ! 从@element-plus/icons 引入 svg icon
 import { Avatar } from '@element-plus/icons'
 
-import SvgIcon from '@/components/SvgIcon/index.vue'
+// import SvgIcon from '@/components/SvgIcon/index.vue'
 import SvgIcon from '../../components/SvgIcon/index.vue'
+import SvgIcon from '../../../imooc-admin-main/src/components/SvgIcon/index.vue'
 onMounted(() => {
   // setTimeout(() => {
   //   window.location = 'http://localhost:8080/#/?token=223555'
