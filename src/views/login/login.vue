@@ -9,8 +9,12 @@
         </el-form-item>
 
         <el-form-item>
-          <el-icon class="svg-container"><avatar /></el-icon
-          ><el-input placeholder="请输入密码" /><el-icon
+          <el-icon class="svg-container">
+            <span class="svg-container">
+              <SvgIcon icon="https://res.lgdsunday.club/user.svg"></SvgIcon>
+            </span>
+          </el-icon>
+          <el-input placeholder="请输入密码" /><el-icon
             class="svg-container show-password"
             ><avatar
           /></el-icon>
@@ -27,6 +31,8 @@ import { onMounted } from 'vue'
 // ! 从@element-plus/icons 引入 svg icon
 import { Avatar } from '@element-plus/icons'
 
+import SvgIcon from '@/components/SvgIcon/index.vue'
+import SvgIcon from '../../components/SvgIcon/index.vue'
 onMounted(() => {
   // setTimeout(() => {
   //   window.location = 'http://localhost:8080/#/?token=223555'

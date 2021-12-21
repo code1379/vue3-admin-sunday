@@ -2,7 +2,16 @@
   <div class="svg-icon">
     <!-- 外部图标和内部图标只能同时展示一个 -->
     <!-- 展示外部图标 -->
+    <div
+      v-if="isExternal"
+      :style="styleExternalIcon"
+      class="svg-external-icon svg-icon"
+      :class="className"
+    ></div>
     <!-- 展示内部图标 -->
+    <svg v-else class="svg-icon" :class="className" aria-hidden="true">
+      <use :xlink:href="iconName" />
+    </svg>
   </div>
 </template>
 
@@ -33,9 +42,23 @@ const styleExternalIcon = computed(() => {
     '-webkit-mask': `url(${props.icon}) no-repeat 50% 50%;`
   }
 })
-// TODO 3. 内部图标
+// TODO 3. 内部图标 添加前缀
 const iconName = computed(() => `#icon-${props.icon}`)
 </script>
 
 <style lang="scss" scoped>
+/* 内部图标 */
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+/* 外部图标 */
+.svg-external-icon {
+  background-color: currentColor;
+  mask-size: cover !important;
+  display: inline-block;
+}
 </style>
