@@ -14,17 +14,15 @@
         <el-form-item>
           <el-icon class="svg-container">
             <!-- TODO 处理外部图标 -->
-            <span class="svg-container">
-              <!-- <SvgIcon icon="https://res.lgdsunday.club/user.svg"></SvgIcon> -->
-              <SvgIcon icon="password"></SvgIcon>
-            </span>
+            <!-- <span class="svg-container"> -->
+            <!-- <SvgIcon icon="https://res.lgdsunday.club/user.svg"></SvgIcon> -->
+            <SvgIcon icon="password"></SvgIcon>
+            <!-- </span> -->
           </el-icon>
           <el-input placeholder="请输入密码" />
-          <span class="svg-container show-password">
-            <el-icon class="svg-container">
-              <SvgIcon icon="eye"></SvgIcon>
-            </el-icon>
-          </span>
+          <el-icon class="svg-container show-password">
+            <SvgIcon icon="eye"></SvgIcon>
+          </el-icon>
         </el-form-item>
       </el-form>
 
@@ -40,7 +38,7 @@ import { Avatar } from '@element-plus/icons'
 
 // import SvgIcon from '@/components/SvgIcon/index.vue'
 import SvgIcon from '../../components/SvgIcon/index.vue'
-import SvgIcon from '../../../imooc-admin-main/src/components/SvgIcon/index.vue'
+// import SvgIcon from '../../../imooc-admin-main/src/components/SvgIcon/index.vue'
 onMounted(() => {
   // setTimeout(() => {
   //   window.location = 'http://localhost:8080/#/?token=223555'
@@ -72,7 +70,8 @@ $cursor: #fff;
       margin-bottom: 40px;
     }
     .login-form {
-      ::v-deep .el-form-item {
+      /* ::v-deep .el-form-item  */
+      :deep(.el-form-item) {
         border: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
         flex-direction: row;
@@ -80,7 +79,8 @@ $cursor: #fff;
         border-radius: 5px;
         color: #454545;
       }
-      ::v-deep .el-input {
+      /* ::v-deep .el-input  */
+      :deep(.el-input) {
         display: inline-block;
         height: 47px;
         width: 85%;
