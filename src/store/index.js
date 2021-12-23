@@ -6,5 +6,10 @@ export default createStore({
   actions: {},
   modules: {
     user
+  },
+  getters: {
+    token(state) {
+      return state.user.token
+    }
   }
 })
