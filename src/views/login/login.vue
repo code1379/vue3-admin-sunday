@@ -4,7 +4,7 @@
       <div class="title">用户登录 - {{ loginForm.username }}</div>
       <el-form
         class="login-form"
-        ref="form"
+        ref="loginFormRef"
         :model="loginForm"
         :rules="loginFormRules"
       >
@@ -65,9 +65,10 @@ const loginFormRules = ref({
   password: [{ required: true, trigger: 'blur', validator: checkPassword }]
 })
 
+const loginFormRef = ref(null)
 const handleLogin = () => {
   console.log('handLogin')
-  this.$refs.form.validate((valid) => {
+  loginFormRef.value.validate((valid) => {
     if (valid) {
       store
         .dispatch('user/login', loginForm.value)
